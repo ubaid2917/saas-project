@@ -1,0 +1,64 @@
+<!-- views/table.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <title>Table Example</title>
+</head>
+
+<body> 
+  
+  <h2>Sample Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Sr. No</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Duration</th>
+        <th>Max Store</th>
+        <th>Max Product</th>
+        <th>Max user</th>
+        <th>Features</th>
+        <th>theme</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let i = 0; i < plan.length; i++) { %>
+        <tr>
+          <td><%= i + 1 %></td>
+          <td><%= plan[i].name %></td>
+          <td><%= plan[i].price %></td>
+          <td><%= plan[i].duration %></td>
+          <td><%= plan[i]. maxStore %></td>
+          <td><%= plan[i]. maxproductPerStore %></td>
+          <td><%= plan[i]. maxuserPerStore %></td> 
+          <td><%= plan[i]. features %></td> 
+          <td><%= plan[i]. theme %></td> 
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+
+</html>

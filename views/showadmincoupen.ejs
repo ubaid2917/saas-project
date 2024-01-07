@@ -1,0 +1,67 @@
+<!-- views/table.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <title>Table Example</title>
+</head>
+
+<body> 
+    <form action="">
+        <input type="search" name="search" placeholder="Search here...">  
+        <button>Submit</button>
+    </form> 
+    <% for( let j = 1; j <= totalPages; j++ ) { 
+        %>
+        <a href="?page=<%= j %>"><%= j %></a>
+        <% } %> 
+  <h2>Sample Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Sr. No</th>
+        <th>Name</th>
+        <th>Coupen type</th>
+        <th>Discount</th>
+        <th>Limit</th>
+        <th>Expiry Data</th>
+        <th>Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let i = 0; i < adminCoupen.length; i++) { %>
+        <tr>
+          <td><%= i + 1 %></td>
+          <td><%= adminCoupen [i].name %></td>
+          <td><%= adminCoupen [i].coupentype %></td>
+          <td><%= adminCoupen [i]. discount %></td>
+          <td><%= adminCoupen [i]. limit %></td>
+          <td><%= (new Date(adminCoupen[i].expiryDate)).toLocaleString('en-US', { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' }) %></td>
+          <td><%= adminCoupen [i].  code %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+
+</html>

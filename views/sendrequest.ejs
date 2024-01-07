@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send request</title>
+</head>
+<body> 
+  <form action="/admin/planrequest/<%= package._id %>" method="post">
+    <label for="">pacakge id</label>
+    <br>
+    <input type="text" name="pacakgeid" value="<%= package._id %>"> <br>
+       <input type="hidden" value="<%= user._id %>" name="user_id"> 
+   <br>
+       <button>Submit</button>
+</form>
+</body>
+</html>

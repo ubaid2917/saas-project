@@ -1,0 +1,67 @@
+<!-- views/table.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <title>Table Example</title>
+</head>
+
+<body> 
+    <form action="">
+        <input type="search" name="search" placeholder="Search here...">  
+        <button>Submit</button>
+    </form> 
+    <% for( let j = 1; j <= totalPages; j++ ) { 
+     %>
+     <a href="?page=<%= j %>"><%= j %></a>
+     <% } %> 
+  <h2>Sample Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Sr. No</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Storename</th>
+        <th>Package</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let i = 0; i < users.length; i++) { %>
+        <tr>
+          <td><%= i + 1 %></td>
+          <td><%= users[i].name %></td>
+          <td><%= users[i].email %></td>
+          <td><%= users[i].storename %></td>
+          <td><% if (users[i].planId) { %>
+              <%= users[i].planId %>
+            <% } else { %>
+              No Plan
+            <% } %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+
+</html>

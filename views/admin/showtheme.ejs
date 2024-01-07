@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Themes</title>
+</head>
+<body>
+     
+    <h2>Themes</h2>
+
+    <table border="1" width="50%"> 
+        
+        <thead >
+            <th>Name</th>
+            <th>Action</th>
+        </thead>
+        <tbody> 
+            <% themes.forEach( theme => { %>
+                <tr>
+                    <td><%= theme.name %></td>
+                    <td><a href="/superadmin/show-content/<%= theme.name %>">theme content</a></td>
+                     
+               
+                 </tr>
+            <% }) %>
+       
+        </tbody>
+    </table>
+</body>
+</html>

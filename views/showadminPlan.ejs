@@ -1,0 +1,50 @@
+<!-- views/cards.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .card {
+            border: 1px solid #dddddd;
+            margin: 10px;
+            padding: 15px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+    </style>
+    <title>Card Example</title>
+</head>
+
+<body>
+
+    <h2>Sample Cards</h2>
+    <% for (let i = 0; i < plan.length; i++) { %>
+        <div class="card">
+            <h2><%= plan[i].name %></h2>
+            <p><strong>Price:</strong> <%= plan[i].price %></p>
+            <p><strong>Duration:</strong> <%= plan[i].duration %></p>
+            <p><strong>Product Limit:</strong> <%= plan[i].productLimit %></p>
+            <p><strong>Features:</strong> <%= plan[i].features.join(', ') %></p>
+            <p><strong>Theme:</strong> <%= plan[i].theme %></p>
+            <a href="subscribe/<%= plan[i]._id %>">Subscribe</a>
+       
+            <!-- Assuming /showadminplanrequest is your route in EJS -->
+            <a href="/admin/planrequest/<%= plan[i]._id %>" >Send Request</a>
+
+        </div>
+    <% } %> 
+   
+</body>
+
+</html>

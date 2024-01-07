@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uplaod Theme</title>
+</head>
+<body> 
+
+    <h3>uplaod theme</h3> 
+
+
+    <form action="/superadmin/add-theme" method="post" enctype="multipart/form-data">
+        <label for="">theme name</label> <br>
+        <input type="text" name="name" placeholder="Enter your theme name">
+        <br>
+
+        <label for="">Theme</label> <br>
+        <input type="file" name="theme" accept=".zip"> <br>
+
+        <br>
+
+        <button>Submit</button>
+    </form>
+    
+</body>
+</html>

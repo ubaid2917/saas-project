@@ -1,0 +1,66 @@
+<!-- views/table.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <title>Table Example</title>
+</head>
+
+<body> 
+    <form action="">
+        <input type="search" name="search" placeholder="Search here...">  
+        <button>Submit</button>
+    </form> 
+  <h2>Requested plan</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Sr. No</th>
+        <th>User name</th>
+        <th>package name</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <% 
+      
+      for (let i = plan.length - 1; i >= 0; i--) { 
+    %>
+      <tr>
+        <td><%= plan.length - i %></td>
+        <td><%= plan[i].userId.name %></td>
+        <td><%= plan[i].packageId ? plan[i].packageId.name : 'N/A' %></td> 
+        <td><%= plan[i].status %></td> 
+        <td>
+          <a href="/superadmin/edit/<%= plan[i]._id %>">update</a>
+        </td>
+      </tr>
+    <% } %>
+        
+    </tbody>
+  </table>
+</body>
+
+</html>

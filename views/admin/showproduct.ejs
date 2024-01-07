@@ -1,0 +1,64 @@
+<!-- views/table.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <title>Show product</title>
+</head>
+
+<body> 
+    <form action="">
+        <input type="search" name="search" placeholder="Search here...">  
+        <button>Submit</button>
+    </form> 
+   
+  <h2>Sample Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Sr. No</th>
+        <th>Catgory</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Tag</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let i = 0; i < product.length; i++) { %>
+        <tr>
+          <td><%= i + 1 %></td>
+          <td><%= product[i].category.title %></td>
+          <td><%= product[i].name %></td>
+          <td><%= product[i].productDescription %></td>
+          <td><%= product[i].tag %></td>
+          <td><%= product[i].price %></td>
+          <td><a href="editProduct/<%= product[i]._id %>" >Detail</a></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+
+</html>

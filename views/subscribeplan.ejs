@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe plan</title>
+</head>
+<body>
+    <form action="/admin/subscribe/<%= plans._id %>" method="post">
+        
+    <label for="">payment type</label>
+     <select name="paymentType" id="">
+        <option value="" disabled selected>Please select the payment type</option>
+        <option value="easypaisa">Easypasia</option>
+        <option value="jazzcash">JazzCash</option>
+     </select>
+       <br>
+        <br>
+      <input type="hidden" name="users" value="<%= user._id %>">
+       
+
+       <br>
+        
+       
+     
+
+        <button type="submit">Create Plan</button>
+    </form>
+</body>
+</html>

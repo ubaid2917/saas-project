@@ -1,0 +1,60 @@
+<!-- views/table.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <title>Table Example</title>
+</head>
+
+<body> 
+    <form action="">
+        <input type="search" name="search" placeholder="Search here...">  
+        <button>Submit</button>
+    </form> 
+    
+  <h2>Sample Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Sr. No</th>
+        <th>Name</th>
+        <th>Discount</th>
+        <th>limit</th>
+        <th>Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let i = 0; i < showCoupens.length; i++) { %>
+        <tr>
+          <td><%= i + 1 %></td>
+          <td><%= showCoupens[i].name %></td>
+          <td><%= showCoupens[i].discount %></td>
+          <td><%= showCoupens[i].limit %></td>
+          <td><%= showCoupens[i].code %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+
+</html>

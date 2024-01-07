@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+     
+<form action="/admin/createProduct" method="post" enctype="multipart/form-data">
+<label for="">category</label> <br> <br>
+
+<select name="category" id="">
+    <option value="">Select the category</option>
+     <% for( let i = 0; i < category.length; i++ ) { %>
+       <option value="<%= category[i].id %>"><%= category[i].title %></option>
+     <% } %>
+  </select>  <br><br>
+
+  <label for="">Name</label> <br>
+  <input type="text" class="name" name="name" placeholder="Enter your product name"> <br>
+  <br>
+<label for="">product Description</label> <br>
+<input type="text" name="productDescription" placeholder="Enter your product description"><br>
+<br>
+<label for="">Other Description</label> <br>
+<input type="text" name="otherDescription" placeholder="Enter your other description"><br>
+<br>
+
+<label for="">Other Description image</label> <br>
+<input type="file" name="otherDescriptionImage" placeholder="Enter your product description"><br> 
+<br>
+<label for="">More Information</label> <br>
+<input type="text" name="moreInformation" placeholder="More Information"><br> 
+ <br>
+<label for=""> more Information image</label> <br>
+<input type="file" name="moreInformationImage" placeholder="Enter your product description"><br> 
+ 
+<br>
+<label for="">Tag</label> <br>
+<select name="tag" id="">
+    <option value="" disabled selected>Select the Tag</option>
+<option value="new">New</option>
+<option value="best seller">Best Seller</option>
+<option value="none">None</option>
+
+</select> 
+  
+<br><br>
+ <label for="">Cover image</label> <br>
+ <input type="file" name="coverImage" placeholder="Enter your cover image"><br>
+ 
+
+ <br><br>
+ <label for="">Sub image</label> <br>
+ <input type="file" name="subImage" placeholder="Enter your sub image"><br>
+ <br> 
+
+ <br> 
+ <label for="">Price</label>
+ <input type="number" name="price" placeholder="Enter your product price">
+<br>
+
+<br> 
+ <label for="">Price</label>
+ <select name="discountType" id="">
+    <option value="" disabled selected>Please select the discount</option> 
+    <option value="flat">Flat</option>
+    <option value="percentage">Percentage</option>
+ </select>
+<br>
+ 
+<br> 
+ <label for="">Discount Amount</label>
+ <input type="number" name="discountAmount" placeholder="Enter your discount amount">
+<br> 
+
+
+<label for="trending">Trending</label>
+<div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" name="trending" id="trendingSwitch">
+</div>
+ 
+<label for="">stock status</label>
+<select name="stockStatus" id="">
+    <option value="" disabled selected>Select the status</option>
+    <option value="in stock">In Stock</option>
+    <option value="out of stock">Out of Stock</option>
+    <option value="on backorder">On Backorder</option>
+</select><br>
+
+<br>
+
+<label for="">Shipping</label>
+<select name="shipping" id="">
+    <option value="">Select the shipping method</option>
+    <% for( let i = 0; i < shipping.length; i++ ) { %>
+      <option value="<%= shipping[i]._id %>"><%= shipping[i].name %></option>
+    <% } %>
+</select><br>
+
+ <label for="">weight</label><br>
+ <input type="number" name="weight" placeholder="Enter your weight"><br>
+
+ <label for="">Attribute</label><br>
+  <select name="attribute" id="">
+    <option value="" disabled selected>Select the attribute</option> 
+    <% for( let i = 0; i < attribute.length; i++ ) { %>
+     <option value="<%= attribute[i]._id %>"><%= attribute[i]. attribute %></option>
+    <% } %>
+  </select> <br> <br> <br>
+
+  <button>Submit</button> <br> <br>
+</form>
+
+</body>
+</html>

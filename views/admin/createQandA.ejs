@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Review</title>
+  
+</head>
+<body>
+
+<h2>Create question </h2> 
+<form action="/admin/createQandA" method="POST">
+
+    <label for="user">User</label><br> 
+    <input type="text" name="user"placeholder="Enter username" required> <br>
+   
+    <label for="product">Product</label> <br> 
+    <select name="product" id="" required>
+        <option value="">Select the product</option>
+        <% for( let i = 0; i < product.length; i++ ) { %>
+           <option value="<%= product[i]._id %>"><%= product[i].name %></option>
+        <% } %>
+    </select> <br>
+   
+   
+    <label for="question">question</label> <br>
+    <textarea name="question" id="question" placeholder="Enter your question" required></textarea> <br>
+
+    <button type="submit">Submit</button>
+</form>
+
+
+
+
+
+
+</body>
+</html>

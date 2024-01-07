@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Coupon Form</title>
+  <style>
+    /* Optional: Add some styling for better presentation */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input, select {
+      width: 20%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Admin Coupon Form</h2>
+  <form action="/admin/createAdminCoupen" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter coupon name" required><br>
+
+    <label for="coupentype">Coupon Type:</label>
+    <select id="coupentype" name="coupentype" required>
+      <option value="percentage">Percentage</option>
+      <option value="flat">Flat</option>
+    </select><br>
+
+    <label for="discount">Discount:</label>
+    <input type="number" id="discount" name="discount" placeholder="Enter discount" required><br>
+
+    <label for="limit">Limit:</label>
+    <input type="number" id="limit" name="limit" placeholder="Enter limit" required><br>
+
+    <label for="expiryDate">Expiry Date:</label>
+    <input type="date" id="expiryDate" name="expiryDate" required><br>
+
+    <label for="code">Code:</label>
+    <input type="text" id="code" name="code" placeholder="Generated code will appear here" readonly><br>
+
+    <label for="status">Status:</label>
+    <input type="checkbox" id="status" name="status" checked><br>
+
+    <label for="freeShippingStatus">Free Shipping Status:</label>
+    <input type="checkbox" id="freeShippingStatus" name="freeShippingStatus"><br>
+
+    <!-- Button to generate code -->
+    <button type="button" onclick="generateCode()">Generate Code</button>
+
+    <!-- Button to submit the form -->
+    <button type="submit">Submit Coupon</button>
+  </form>
+
+  <script>
+    // JavaScript to generate a 6-digit code and populate the input field
+    function generateCode() {
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let code = '';
+
+      for (let i = 0; i < 6; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        code += characters.charAt(randomIndex);
+      }
+
+      // Set the generated code in the input field
+      document.getElementById('code').value = code;
+    }
+  </script>
+</body>
+
+</html>

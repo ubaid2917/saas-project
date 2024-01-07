@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Review</title>
+  
+</head>
+<body>
+
+<h2>Question reply</h2> 
+<form action="/admin/replyqanda/<%= qanda._id %>" method="POST">
+
+    <label for="user">User</label><br> 
+    <input type="text" name="user" value="<%= qanda.user %>" placeholder="Enter username" required> <br>
+   
+    <label for="product">Product</label> <br> 
+    <select name="product" id="">
+       
+            <option value="<%= product._id %>" selected ><%= qanda.product.name %></option>
+
+     
+    </select> <br>
+   
+    <label for="question">question</label> <br>
+    <textarea name="question" id="question"  placeholder="Enter your question" required><%= qanda.question %></textarea> 
+ <br>
+ <label for="">Answer</label> <br>
+   <textarea name="answer" id="" cols="20" rows="5"></textarea>
+ <br>
+
+    
+
+    <button type="submit">Submit</button>
+</form>
+
+
+
+
+
+
+</body>
+</html>

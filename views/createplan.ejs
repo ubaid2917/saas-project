@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create plan</title>
+</head>
+<body>
+    <form action="/superadmin/createplan" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" required><br>
+
+        <label for="duration">Duration:</label>
+        <select id="duration" name="duration" required>
+            <option value="unlimited">Unlimited</option>
+            <option value="permonth">Per Month</option>
+            <option value="peryear">Per Year</option>
+        </select><br> 
+
+        <br> 
+        <label for="">Product Limit</label>
+        <input type="number" placeholder="Enter product duration">
+        <br>
+
+        <label for="maxStore">Max Store:</label>
+        <input type="number" id="maxStore" name="maxStore" required><br>
+
+        <label for="maxproductPerStore">Max Product Per Store:</label>
+        <input type="number" id="maxproductPerStore" name="maxproductPerStore" required><br>
+
+        <label for="maxuserPerStore">Max User Per Store:</label>
+        <input type="number" id="maxuserPerStore" name="maxuserPerStore" required><br>
+
+        <label for="features">Features:</label><br>
+        <input type="checkbox" id="enableDomain" name="features" value="enable domain">
+        <label for="enableDomain">Enable Domain</label><br>
+
+        <input type="checkbox" id="enableSubdomain" name="features" value="enable subdomain">
+        <label for="enableSubdomain">Enable Subdomain</label><br>
+           
+        <input type="checkbox" id="enableChatgpt" name="features" value="enable chatgpt">
+        <label for="enableChatgpt">Enable Chatgpt</label><br>
+
+        <input type="checkbox" id="pwa" name="features" value="pwa">
+        <label for="pwa">PWA</label><br>
+
+        <input type="checkbox" id="shipping" name="features" value="shipping">
+        <label for="shipping">Shipping</label><br>
+
+        <label for="theme">Theme:</label>
+        <select id="theme" name="theme" required>
+            <option value="theme1">Theme 1</option>
+            <option value="theme2">Theme 2</option>
+            <option value="theme3">Theme 3</option>
+            <option value="theme4">Theme 4</option>
+            <option value="theme5">Theme 5</option>
+        </select><br>
+
+        <label for="descriptions">Descriptions:</label>
+        <textarea id="descriptions" name="descriptions" required></textarea><br>
+
+        <button type="submit">Create Plan</button>
+    </form>
+</body>
+</html>
